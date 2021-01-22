@@ -1,0 +1,43 @@
+<div class="container-fluid justify-content-center mt-4 mb-3">
+<h1>The table below presents COVID-19 statistics for each voivodeship in Poland. </h1>
+<div class="justify-content-center pb-5">
+<table id="voivodeshipTable" mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8 ">
+
+<ng-container matColumnDef="voivodeship">
+  <th mat-header-cell *matHeaderCellDef>Voivodeship</th>
+  <td mat-cell *matCellDef="let element"> {{element.voivodeship}} </td>
+</ng-container>
+
+
+<ng-container matColumnDef="numberOfInfection">
+  <th mat-header-cell *matHeaderCellDef>Infections</th>
+  <td mat-cell *matCellDef="let element"> {{element.numberOfInfection}} </td>
+</ng-container>
+
+
+<ng-container matColumnDef="numberFor10Citizens">
+  <th mat-header-cell *matHeaderCellDef>Average for 10 Citizens</th>
+  <td mat-cell *matCellDef="let element"> {{element.numberFor10Citizens }} </td>
+</ng-container>
+
+
+<ng-container matColumnDef="numberOfDeaths">
+  <th mat-header-cell *matHeaderCellDef>Deaths</th>
+  <td mat-cell *matCellDef="let element"> {{element.numberOfDeaths}} </td>
+</ng-container>
+
+  <ng-container matColumnDef="numberOfDeathsWithOtherSick">
+    <th mat-header-cell *matHeaderCellDef>Deaths with other diseases</th>
+    <td mat-cell *matCellDef="let element"> {{element.numberOfDeathsWithOtherSick}}</td>
+  </ng-container>
+
+  <ng-container matColumnDef="numberOfDeathsWithoutOtherSick">
+    <th mat-header-cell *matHeaderCellDef>Deaths without other diseases </th>
+    <td mat-cell *matCellDef="let element"> {{element.numberOfDeathsWithoutOtherSick}} </td>
+  </ng-container>
+
+<tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+<tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>
+</div>
+</div>
